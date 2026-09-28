@@ -9,6 +9,8 @@ python-docx==1.1.2
 
 # RAG Components
 chromadb==0.5.18
+# ChromaDB 0.5.x uses PostHog's legacy positional capture API.
+posthog>=2.4.0,<6
 sentence-transformers==3.3.1
 
 # LLM Integration

@@ -109,6 +109,16 @@ class DocumentService:
             if not chunks:
                 raise ValueError("No content could be extracted from the document")
 
+            # Overwrite source metadata with original filename for proper tracking/deletion
+            original_filename = Path(filename).name
+            file_type_str = Path(filename).suffix.lower().lstrip(".")
+            for chunk in chunks:
+                chunk.metadata["source"] = original_filename
+                chunk.metadata["file_type"] = file_type_str
+
+            if not chunks:
+                raise ValueError("No content could be extracted from the document")
+
             # Index chunks in vector store
             for chunk in chunks:
                 embedding = self.embedding_service.embed_text(chunk.text)
