@@ -4,7 +4,7 @@ A full-stack Retrieval-Augmented Generation (RAG) application that allows users 
 
 The system retrieves the most relevant document chunks from a local vector database and uses a locally running LLM to generate grounded answers with source citations.
 
-![RAG Document Q&A Dashboard](docs/dashboard.png)
+![RAG Document Q&A Dashboard](dashboard.png)
 
 ---
 
